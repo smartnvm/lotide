@@ -47,3 +47,6 @@ assertArraysEqual(middle(['a', 'b', 'c', 'd', 'e']), ['c']);
 assertArraysEqual(middle(['a', 'b']), []);
 assertArraysEqual(middle(['a', 'b',1]), []);
 assertArraysEqual(middle([1, 3, 4, 5]), [3, 4]);
+assertArraysEqual(middle([1, 2, 3, 4]), [2, 3]);
+assertArraysEqual(middle([1]),[]);
+assertArraysEqual(middle([1, 2]), []);
