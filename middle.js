@@ -25,18 +25,30 @@ const assertArraysEqual = function (arr1, arr2) {
 const middle = function (arr) {
   midArr = [];
   arrLen = arr.length;
-  if (arrLen > 2) {
+
+  (arrLen % 2 === 0) ? isEven = true : isEven = false;
+
+  isEven ? midIndex = arrLen / 2 : midIndex = (arrLen - 1) / 2;
+
+  //console.log(arr, arrLen, midIndex);
+  if (arrLen <= 2) {
     //console.log(arr);
-    if (arrLen % 2 === 1) { // array with odd # of elements
-      midArr.push(arr[(arrLen + 1) / 2 - 1])
-    }
-    else {
-      midArr.push(arr[arrLen / 2] - 1);
-      midArr.push(arr[(arrLen / 2)]);
-
-    }
-
+    return midArr;
   }
+
+  if (!isEven) { // array with odd # of elements
+    midArr.push(arr[midIndex]);
+   // console.log(arr);
+    return midArr;
+  }
+
+  //midArr.push(arr[midIndex - 1]);
+  //midArr.push(arr[midIndex]);
+  
+  //slice([start], end)  end not included
+  midArr = arr.slice(midIndex - 1, midIndex+1);
+  //console.log(midArr);
+
   return midArr;
 }
 
@@ -45,8 +57,8 @@ console.log('-----TEST CASES--------------');
 assertArraysEqual(middle([1, 2, 3, 4, 5, 6]), [3, 4]);
 assertArraysEqual(middle(['a', 'b', 'c', 'd', 'e']), ['c']);
 assertArraysEqual(middle(['a', 'b']), []);
-assertArraysEqual(middle(['a', 'b',1]), []);
+assertArraysEqual(middle(['a', 'b', 1]), []);
 assertArraysEqual(middle([1, 3, 4, 5]), [3, 4]);
 assertArraysEqual(middle([1, 2, 3, 4]), [2, 3]);
-assertArraysEqual(middle([1]),[]);
+assertArraysEqual(middle([1]), []);
 assertArraysEqual(middle([1, 2]), []);
