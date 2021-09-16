@@ -15,8 +15,6 @@ const eqArrays = function (arr1, arr2) {
     }
 
   }
-
-
   return true;
 };
 
@@ -35,23 +33,16 @@ const letterPosition = function (strWord) {
   for (const char of strWord) {
     (char !== ' ') ? obj[char] = [] : false
   }
-  /*console.log('obj:',obj['i'].push('12')) 
-  console.log('obj:',obj['i'].push('2')) 
-  console.log('obj:',obj)
-  return*/
+  
   for (i = 0; i < strWord.length; i++) {
     char = strWord[i]
     if (char !== ' ') {
      // console.log("i:", i, "obj:", obj[char])
      
-      //can't use obj[char] because it's an array
       //with push do not re-assign simply push to the object[key]
-     
       //obj[char] = obj[char].push(i);  // incorrect to re-assign
 
-     obj[char].push(i);
-
-          
+     obj[char].push(i);          
     }
   }
   return obj;
