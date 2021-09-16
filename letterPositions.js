@@ -1,18 +1,34 @@
+
 const happyFace = String.fromCodePoint(128516);
 const sickFace = String.fromCodePoint(129314);
 
-// FUNCTION IMPLEMENTATION
-const assertEqual = function (actual, expected) {
-  (actual === expected) ?
-    console.log(happyFace + ` Assertion Passed: ${actual} === ${expected}`) :
-    console.log(sickFace + ` Assertion Failed! ${actual} !== ${expected}`);
+const eqArrays = function (arr1, arr2) {
+
+  if (arr1.length !== arr2.length) {
+
+    return false
+  }
+
+  for (let i = 0; i < arr1.length; i++) {
+    if (arr1[i] !== arr2[i]) {
+      return false;
+    }
+
+  }
+
+
+  return true;
 };
 
+const assertArraysEqual = function (arr1, arr2) {
+
+  eqArrays(arr1, arr2) ? console.log(happyFace + ` PASS: Arrays are identical`) :
+    console.log(sickFace + ` FAIL: Arrays are not equal`);
+}
 
 
 
-
-const countLetters = function (strWord) {
+const letterPosition = function (strWord) {
   const obj = {}
 
   //initialize obj with [char] keys - without spaces
@@ -43,20 +59,21 @@ const countLetters = function (strWord) {
 }
 
 
-const result1 = countLetters('lighthouse in the house');
+const result1 = letterPosition('lighthouse in the house');
 
 console.log(result1)
-/*
+
 // TEST CODE
 
+
 console.log('--------------')
-assertEqual(result1["l"], 1);
-assertEqual(result1["i"], 2);
-assertEqual(result1["g"], 1);
-assertEqual(result1["h"], 4);
-assertEqual(result1["t"], 2);
-assertEqual(result1["o"], 2);
-assertEqual(result1["u"], 2);
-assertEqual(result1["s"], 2);
-assertEqual(result1["e"], 3);
-assertEqual(result1["n"], 1);*/
+assertArraysEqual(result1["l"], [ 0 ]);
+assertArraysEqual(result1["i"], [ 1, 11 ]);
+assertArraysEqual(result1["g"], [ 2 ]);
+assertArraysEqual(result1["h"], [ 3, 5, 15, 18 ]);
+assertArraysEqual(result1["t"], [ 4, 14 ]);
+assertArraysEqual(result1["o"], [ 6, 19 ]);
+assertArraysEqual(result1["u"], [ 7, 20 ]);
+assertArraysEqual(result1["s"], [ 8, 21 ]);
+assertArraysEqual(result1["e"], [ 9, 16, 22 ]);
+assertArraysEqual(result1["n"], [12]);
