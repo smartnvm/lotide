@@ -12,7 +12,7 @@ const assertEqual = function (actual, expected) {
 
 
 
-const countLetters = function (strWord, letters) {
+const countLetters = function (strWord) {
   const obj = {}
 
   //initialize obj with [char] keys - without spaces
