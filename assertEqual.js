@@ -1,17 +1,15 @@
 
-const happyFace = String.fromCodePoint(128516);
-const sickFace = String.fromCodePoint(129314);
+
+const okEmoji = String.fromCodePoint(128516);
+const failEmoji = String.fromCodePoint(129314);
 
 // FUNCTION IMPLEMENTATION
-const assertEqual = function(actual, expected) {
+const assertEqual = function (actual, expected) {
   (actual === expected) ?
-    console.log(happyFace + ` Assertion Passed: ${actual} === ${expected}`) :
-    console.log(sickFace + ` Assertion Failed! ${actual} !== ${expected}`);
+    console.log(okEmoji + ` Assertion Passed: ${actual} === ${expected}`) :
+    console.log(failEmoji + ` Assertion Failed! ${actual} !== ${expected}`);
 };
 
-// TEST CODE
-assertEqual("Lighthouse Labs", "Bootcamp");
-assertEqual("Bootcamp", "Bootcamp");
-assertEqual(1, 1);
-assertEqual(1, 5);
-assertEqual(1, '1');
+
+module.exports = { assertEqual };
+
