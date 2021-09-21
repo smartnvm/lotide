@@ -1,16 +1,23 @@
 const { assertEqual } = require("./assertEqual");
 const { head } = require("./head");
 
+// An array with only one element should yield an empty array for its tail
+// An empty array should yield an empty array for its tail
 
 
 const tail = function (arr) {
 
-  if (arr.length > 2) {
-    return arr.slice(1, arr.length-1);
-
-  } else if (arr.length === 2) {
-    return arr[1];
+  
+  if (arr === undefined) {
+    return undefined;
   }
+  if (arr.length === 2) {
+    return arr[1];
+  } 
+  if (arr.length > 2) {
+    return arr.slice(1, arr.length - 1);
+  }
+  
   return []
 }
 
