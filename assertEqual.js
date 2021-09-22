@@ -1,5 +1,3 @@
-
-
 const okEmoji = String.fromCodePoint(128516);
 const failEmoji = String.fromCodePoint(129314);
 

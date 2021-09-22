@@ -1,13 +1,5 @@
+const { assertEqual } = require("./assertEqual");
 
-const happyFace = String.fromCodePoint(128516);
-const sickFace = String.fromCodePoint(129314);
-
-// FUNCTION IMPLEMENTATION
-const assertEqual = function(actual, expected) {
-  (actual === expected) ?
-    console.log(happyFace + ` Assertion Passed: ${actual} === ${expected}`) :
-    console.log(sickFace + ` Assertion Failed! ${actual} !== ${expected}`);
-};
 
 
 const findKey = (obj, callback) => {
@@ -19,6 +11,8 @@ const findKey = (obj, callback) => {
   }
 }
 
+module.exports = { findKey}
+/*
 
 assertEqual(findKey({
   "Blue Hill": { stars: 1 },
@@ -46,3 +40,4 @@ assertEqual(findKey({
   "Ora": { stars: 2 },
   "Akelarre": { stars: 3 }
 }, x => x.stars === 0),undefined); // => undefined
+*/

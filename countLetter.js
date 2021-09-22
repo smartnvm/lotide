@@ -1,15 +1,5 @@
-const happyFace = String.fromCodePoint(128516);
-const sickFace = String.fromCodePoint(129314);
 
-// FUNCTION IMPLEMENTATION
-const assertEqual = function (actual, expected) {
-  (actual === expected) ?
-    console.log(happyFace + ` Assertion Passed: ${actual} === ${expected}`) :
-    console.log(sickFace + ` Assertion Failed! ${actual} !== ${expected}`);
-};
-
-
-
+const { assertEqual } = require("./assertEqual");
 
 
 const countLetters = function (strWord) {
@@ -27,8 +17,9 @@ const countLetters = function (strWord) {
 
 }
 
+module.exports = {countLetters}
 
-const result1 = countLetters('lighthouse in the house');
+/*const result1 = countLetters('lighthouse in the house');
 
 console.log(result1)
 
@@ -44,4 +35,4 @@ assertEqual(result1["o"],2);
 assertEqual(result1["u"],2);
 assertEqual(result1["s"],2);
 assertEqual(result1["e"],3);
-assertEqual(result1["n"],1);
+assertEqual(result1["n"],1);*/
