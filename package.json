@@ -1,8 +1,8 @@
 {
-  "name": "lotide",
+  "name": "@aj.smartnvm/lotide",
   "version": "1.0.0",
   "description": "A clone of the lodash JavaScript library to practice creating various types of functions using JS.",
-  "main": "main.js",
+  "main": "index.js",
   "directories": {
     "test": "test"
   },
